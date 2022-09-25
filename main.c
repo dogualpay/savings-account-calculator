@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /// <Change these>
+#define YEARS_TO_SHOW 50
 #define YEARLY_INTEREST_PERCENTAGE 5
 #define STARTING_AMOUNT 2000
 #define MONTHLY_PAYMENT 2000 // Monthly addition to your account. (Your net income will be added to your account automatically.)
@@ -19,8 +20,8 @@ int main()
     double monthly_income = 0;
     double yearly_income = 0;
     
-    for(int i=1; i<51; i++){
-        for(int j=1; j<13; j++){
+    for(int i=1; i<=YEARS_TO_SHOW; i++){
+        for(int j=1; j<=12; j++){
             monthly_income = monthly(monthly_interest, bank_account);
             yearly_income += monthly_income;
             bank_account += monthly_income + monthly_payment;
